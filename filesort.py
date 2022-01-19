@@ -1,9 +1,14 @@
-import os, re, shutil
+import os, shutil
 numberoffiles = 0
-#This solution is faster but path is absolute and both variables have to be adjusted in order for it to work!
-#filesdir = "C:\\Users\\Boryshehe\\Desktop\\sort\\notsorted"
-#homedir = "C:\\Users\\Boryshehe\\Desktop\\sort"
-filesdir = os.getcwd() + "/" + "notsorted"
+
+""""
+This solution does not require moving script to desired directory, but used path is absolute and it has to be adjusted in order for it to work!
+
+filesdir = "C:\\Users\\[windows-username]\\Desktop\\"
+homedir = "C:\\Users\\[windows-username]\\Desktop\\"
+"""
+
+filesdir = os.getcwd() + "/"
 homedir = os.getcwd()
 def createfolder():
 	path = homedir + "\\" + ext
@@ -14,7 +19,7 @@ def createfolder():
 filestosort = os.listdir(filesdir)
 for plik in filestosort:
 	konkretnyplik = filestosort[numberoffiles]
-	if "." in konkretnyplik:
+	if "." in konkretnyplik and konkretnyplik != "filesort.py":
 		directorytofile = filesdir + "\\" + konkretnyplik
 		ext = os.path.splitext(konkretnyplik)[1]
 		ext = ext.lstrip(".")
