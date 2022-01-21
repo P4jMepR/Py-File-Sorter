@@ -8,8 +8,9 @@ filesdir = "C:\\Users\\[windows-username]\\Desktop\\"
 homedir = "C:\\Users\\[windows-username]\\Desktop\\"
 """
 
-filesdir = os.getcwd() + "/"
+filesdir = os.getcwd()
 homedir = os.getcwd()
+
 def createfolder():
 	path = homedir + "\\" + ext
 	path = str(path)
